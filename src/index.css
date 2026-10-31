@@ -1,0 +1,31 @@
+/* ERP System — design tokens from design-anchor.md (single source of truth) */
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #F7F7F5;
+  --color-surface: #FFFFFF;
+  --color-ink: #1A1D1A;
+  --color-muted: #6B6F6B;
+  --color-accent: #0F6B4F;
+  --color-accent-soft: #E7F2ED;
+  --color-danger: #B42318;
+  --color-line: #E4E4E0;
+
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascade Mono", monospace;
+
+  --radius-card: 6px;
+  --radius-badge: 4px;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+}
+
+/* amounts, SKUs, ids */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
