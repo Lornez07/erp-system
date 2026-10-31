@@ -51,3 +51,13 @@ Reads: authenticated-only on all module tables. Writes gated by `has_role()` hel
 | 375px | inventory, purchasing | same bottom-nav family — spot-checked only |
 
 Captured files: `docs/screenshots/` (dashboard ×2, inventory ×1, purchasing ×1, sales ×1, login ×1). Minor nits noted (non-blocking): STATUS badge sits close to the right edge at 375px on the sales list; purchasing list is intentionally spare (no status filter — all seeded POs are received).
+
+## Deployment record
+
+- Live: https://erp-system-demos.vercel.app (Vercel, Vite preset)
+- SPA rewrite verified: deep link /sales returns 200 + index shell (2026-11-01)
+- Env vars set in Vercel: VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY (anon key is public-by-design; security rests on RLS)
+- .env git-ignored; only .env.example committed
+- Operator steps remaining: Supabase Auth URL Configuration (Site URL + Redirect URLs = Vercel domain); logged-in smoke test on the live domain
+
+- Post-deploy fix (2026-11-01): mobile had no sign-out (sidebar is desktop-only) — added mobile-only top bar with user chip + Sign out to AppShell.tsx; observed by operator on 375px and reported good

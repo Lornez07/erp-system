@@ -50,9 +50,26 @@ export function AppShell() {
         </div>
       </aside>
 
+      {/* mobile top bar — replaces the sidebar's header + user chip */}
+      <div className="fixed inset-x-0 top-0 z-40 flex items-center justify-between border-b border-line bg-surface px-3 py-2 md:hidden">
+        <p className="font-mono text-xs uppercase tracking-widest">Demo Trade Co</p>
+        <div className="flex items-center gap-2">
+          <span className="text-xs text-muted">
+            {profile?.full_name || 'Signed in'} · <span className="font-mono uppercase">{profile?.role}</span>
+          </span>
+          <button
+            type="button"
+            onClick={signOut}
+            className="border border-line bg-surface px-2 py-1 text-xs text-accent underline-offset-2 hover:underline"
+          >
+            Sign out
+          </button>
+        </div>
+      </div>
+
       {/* main content — full-bleed for dense tables, offset by sidebar on desktop */}
       <div className="md:pl-60">
-        <main className="mx-auto px-4 py-6 pb-24 md:px-8 md:pb-10" style={{ maxWidth: 1280 }}>
+        <main className="mx-auto px-4 pb-24 pt-14 md:px-8 md:pb-10 md:pt-6" style={{ maxWidth: 1280 }}>
           <Outlet />
         </main>
       </div>
