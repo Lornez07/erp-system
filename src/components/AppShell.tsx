@@ -53,8 +53,8 @@ export function AppShell() {
       {/* mobile top bar — replaces the sidebar's header + user chip */}
       <div className="fixed inset-x-0 top-0 z-40 flex items-center justify-between border-b border-line bg-surface px-3 py-2 md:hidden">
         <p className="font-mono text-xs uppercase tracking-widest">Demo Trade Co</p>
-        <div className="flex items-center gap-2">
-          <span className="text-xs text-muted">
+        <div className="flex min-w-0 items-center gap-2">
+          <span className="max-w-[8rem] truncate text-xs text-muted">
             {profile?.full_name || 'Signed in'} · <span className="font-mono uppercase">{profile?.role}</span>
           </span>
           <button
